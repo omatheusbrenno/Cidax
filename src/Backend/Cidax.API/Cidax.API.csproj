@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Cidax.Communication\Cidax.Communication.csproj" />
+    <ProjectReference Include="..\..\Shared\Cidax.Exceptions\Cidax.Exceptions.csproj" />
+    <ProjectReference Include="..\Cidax.Application\Cidax.Application.csproj" />
+  </ItemGroup>
+
+</Project>
