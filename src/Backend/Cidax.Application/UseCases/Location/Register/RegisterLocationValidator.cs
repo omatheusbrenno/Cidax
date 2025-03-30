@@ -1,4 +1,5 @@
 ﻿using Cidax.Communication.Requests;
+using Cidax.Exceptions;
 using FluentValidation;
 
 namespace Cidax.Application.UseCases.Location.Register
@@ -8,20 +9,20 @@ namespace Cidax.Application.UseCases.Location.Register
         public RegisterLocationValidator()
         {
             RuleFor(location => location.Name)
-                .NotEmpty().WithMessage("kkj")
-                .Length(3, 100).WithMessage("kjk");
+                .NotEmpty().WithMessage(ResourceMessagesException.NAME_NOT_EMPTY)
+                .Length(3, 100).WithMessage(ResourceMessagesException.NAME_LENGTH);
 
             RuleFor(location => location.Category)
-                .NotEmpty().WithMessage("h")
-                .IsEnumName(typeof(LocationCategory), caseSensitive: false).WithMessage("A");
+                .NotEmpty().WithMessage(ResourceMessagesException.CATEGORY_NOT_EMPTY)
+                .IsEnumName(typeof(LocationCategory), caseSensitive: false).WithMessage(ResourceMessagesException.INVALID_CATEGORY);
 
             RuleFor(location => location.Latitude)
-                .NotEmpty().WithMessage("h")
-                .InclusiveBetween(-90, 90).WithMessage("A");
+                .NotEmpty().WithMessage(ResourceMessagesException.LATITUDE_NOT_EMPTY)
+                .InclusiveBetween(-90, 90).WithMessage(ResourceMessagesException.LATITUDE_INCLUSIVE_BETWEEN);
 
             RuleFor(location => location.Longitude)
-                .NotEmpty().WithMessage("h")
-                .InclusiveBetween(-180, 180).WithMessage("A");
+                .NotEmpty().WithMessage(ResourceMessagesException.LONGITUDE_NOT_EMPTY)
+                .InclusiveBetween(-180, 180).WithMessage(ResourceMessagesException.LONGITUDE_INCLUSIVE_BETWEEN);
         }
     }
 }
