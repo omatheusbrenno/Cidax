@@ -10,8 +10,8 @@ namespace Cidax.API.Controllers
     public class LocationsController : ControllerBase
     {
         [HttpPost]
-        [ProducesResponseType(typeof(ResponseRegisteredLocationGeoJson), StatusCodes.Status201Created)]
-        public IActionResult CreateLocation(RequestRegisterLocationGeoJson request)
+        [ProducesResponseType(typeof(ResponseRegisteredLocationJson), StatusCodes.Status201Created)]
+        public IActionResult CreateLocation(RequestRegisterLocationJson request)
         {
             return Created();
         }
@@ -35,8 +35,8 @@ namespace Cidax.API.Controllers
         }
 
         [HttpPut("{id}")]
-        [ProducesResponseType(typeof(ResponseRegisteredLocationGeoJson), StatusCodes.Status204NoContent)]
-        public IActionResult UpdateLocation(string id, RequestRegisterLocationGeoJson request)
+        [ProducesResponseType(typeof(ResponseRegisteredLocationJson), StatusCodes.Status204NoContent)]
+        public IActionResult UpdateLocation(string id, RequestRegisterLocationJson request)
         {
             return NoContent();
         }
