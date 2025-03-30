@@ -1,5 +1,6 @@
 ﻿using Cidax.Communication.Requests;
 using Cidax.Communication.Responses;
+using Cidax.Exceptions.ExceptionsBase;
 using System.Net.Http.Headers;
 
 namespace Cidax.Application.UseCases.Location.Register
@@ -29,9 +30,9 @@ namespace Cidax.Application.UseCases.Location.Register
 
             if (result.IsValid == false)
             {
-                var errorMessages = result.Errors.Select(e => e.ErrorMessage);
+                var errorMessages = result.Errors.Select(e => e.ErrorMessage).ToList();
 
-                throw new Exception();
+                throw new ErrorOnValidationException(errorMessages);
             }
         }
     }
