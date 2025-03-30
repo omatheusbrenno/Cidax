@@ -1,6 +1,6 @@
 ﻿namespace Cidax.Communication.Responses
 {
-    public class ResponseRegisteredLocationGeoJson
+    public class ResponseRegisteredLocationJson
     {
         public string Name { get; set; } = string.Empty;
     }
