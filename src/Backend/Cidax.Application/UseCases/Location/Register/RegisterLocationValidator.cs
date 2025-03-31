@@ -1,4 +1,5 @@
 ﻿using Cidax.Communication.Requests;
+using Cidax.Domain.Enums;
 using Cidax.Exceptions;
 using FluentValidation;
 
@@ -14,7 +15,7 @@ namespace Cidax.Application.UseCases.Location.Register
 
             RuleFor(location => location.Category)
                 .NotEmpty().WithMessage(ResourceMessagesException.CATEGORY_NOT_EMPTY)
-                .IsEnumName(typeof(LocationCategory), caseSensitive: false).WithMessage(ResourceMessagesException.INVALID_CATEGORY);
+                .IsEnumName(typeof(Category), caseSensitive: false).WithMessage(ResourceMessagesException.INVALID_CATEGORY);
 
             RuleFor(location => location.Latitude)
                 .NotEmpty().WithMessage(ResourceMessagesException.LATITUDE_NOT_EMPTY)
