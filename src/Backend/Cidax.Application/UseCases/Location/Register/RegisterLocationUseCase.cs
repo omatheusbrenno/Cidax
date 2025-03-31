@@ -1,4 +1,5 @@
-﻿using Cidax.Communication.Requests;
+﻿using Cidax.Application.Services.AutoMapper;
+using Cidax.Communication.Requests;
 using Cidax.Communication.Responses;
 using Cidax.Exceptions.ExceptionsBase;
 using System.Net.Http.Headers;
@@ -9,11 +10,14 @@ namespace Cidax.Application.UseCases.Location.Register
     {
         public ResponseRegisteredLocationJson Execute(RequestRegisterLocationJson request)
         {
+            var autoMapper = new AutoMapper.MapperConfiguration(options =>
+            {
+                options.AddProfile(new AutoMapping());
+            }).CreateMapper();
+
             Validate(request);
 
-            // Mapear a request com uma entidade
-
-            // Transformar Json em GeoJson
+            var location = autoMapper.Map<Domain.Entities.Location>(request);
 
             // Salvar no banco de dados
 
