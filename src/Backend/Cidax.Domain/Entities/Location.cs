@@ -1,5 +1,5 @@
 ﻿using Cidax.Domain.Enums;
-using System.Drawing;
+using NetTopologySuite.Geometries;
 
 namespace Cidax.Domain.Entities
 {
@@ -8,6 +8,16 @@ namespace Cidax.Domain.Entities
         public Guid Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public Category? Category { get; set; }
-        public Point Point { get; set; }
+        public required Point Point { get; set; }
+        public static Location Create(string name, Category? category, double longitude, double latitude)
+        {
+            return new Location
+            {
+                Id = Guid.NewGuid(),
+                Name = name,
+                Category = category,
+                Point = new Point(longitude, latitude) { SRID = 4326 }
+            };
+        }
     }
 }
