@@ -14,6 +14,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{244965F3-17F3-4FF0-9E3E-DA36AFCE61C7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cidax.API", "src\Backend\Cidax.API\Cidax.API.csproj", "{637C3CC8-3C32-4C1F-91D1-96803027680A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C9361D51-0F25-4DD7-AB54-7BA09A73EFE6} = {C9361D51-0F25-4DD7-AB54-7BA09A73EFE6}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cidax.Domain", "src\Backend\Cidax.Domain\Cidax.Domain.csproj", "{640109AA-09C2-4EAD-A966-8AB895C8507E}"
 EndProject

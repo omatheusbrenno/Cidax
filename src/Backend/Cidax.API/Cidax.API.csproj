@@ -14,6 +14,7 @@
     <ProjectReference Include="..\..\Shared\Cidax.Communication\Cidax.Communication.csproj" />
     <ProjectReference Include="..\..\Shared\Cidax.Exceptions\Cidax.Exceptions.csproj" />
     <ProjectReference Include="..\Cidax.Application\Cidax.Application.csproj" />
+    <ProjectReference Include="..\Cidax.Infrastructure\Cidax.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
