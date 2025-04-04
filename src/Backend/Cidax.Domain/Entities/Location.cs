@@ -5,7 +5,7 @@ namespace Cidax.Domain.Entities
 {
     public class Location
     {
-        public Guid Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public Category Category { get; set; }
         public required Point Point { get; set; }
@@ -13,7 +13,6 @@ namespace Cidax.Domain.Entities
         {
             return new Location
             {
-                Id = Guid.NewGuid(),
                 Name = name,
                 Category = category,
                 Point = new Point(longitude, latitude) { SRID = 4326 }

@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Cidax.Communication.Requests;
+using Cidax.Communication.Responses;
 using Cidax.Domain.Enums;
+using Sqids;
 
 namespace Cidax.Application.Services.AutoMapper
 {
@@ -9,6 +11,7 @@ namespace Cidax.Application.Services.AutoMapper
         public AutoMapping()
         {
             RequestToDomain();
+            DomainToResponse();
         }
         private void RequestToDomain()
         {
@@ -23,7 +26,7 @@ namespace Cidax.Application.Services.AutoMapper
         }
         private void DomainToResponse()
         {
-            
+            CreateMap<Domain.Entities.Location, ResponseRegisteredLocationJson>();
         }
     }
 }

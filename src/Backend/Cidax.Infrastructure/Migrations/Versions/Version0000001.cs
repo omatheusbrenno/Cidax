@@ -8,7 +8,7 @@ namespace Cidax.Infrastructure.Migrations.Versions
         public override void Up()
         {
             Create.Table("Locations")
-                .WithColumn("Id").AsGuid().PrimaryKey()
+                .WithColumn("Id").AsInt64().PrimaryKey()
                 .WithColumn("Name").AsString(100).NotNullable()
                 .WithColumn("Category").AsInt32().NotNullable()
                 .WithColumn("Point").AsCustom("GEOGRAPHY(Point, 4326)").NotNullable();
