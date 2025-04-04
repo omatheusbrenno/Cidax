@@ -15,11 +15,11 @@ namespace Cidax.Application.Services.AutoMapper
             CreateMap<RequestRegisterLocationJson, Domain.Entities.Location>()
             .ForMember(dest => dest.Point, opt => opt.Ignore())
             .ForMember(dest => dest.Category, opt => opt.MapFrom(src => ParseCategory(src.Category)))
-            .ConstructUsing(src => Domain.Entities.Location.Create(src.Name, null, src.Latitude, src.Longitude));
+            .ConstructUsing(static src => Domain.Entities.Location.Create(src.Name, ParseCategory(src.Category), src.Longitude, src.Latitude));
         }
-        private static Category? ParseCategory(string category)
+        private static Category ParseCategory(string category)
         {
-            return Enum.TryParse<Category>(category, true, out var parsedCategory) ? parsedCategory : null;
+            return Enum.Parse<Category>(category, true);
         }
         private void DomainToResponse()
         {

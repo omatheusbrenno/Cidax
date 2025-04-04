@@ -10,7 +10,7 @@ namespace Cidax.Infrastructure.Migrations.Versions
             Create.Table("Locations")
                 .WithColumn("Id").AsGuid().PrimaryKey()
                 .WithColumn("Name").AsString(100).NotNullable()
-                .WithColumn("Category").AsInt32().Nullable()
+                .WithColumn("Category").AsInt32().NotNullable()
                 .WithColumn("Point").AsCustom("GEOGRAPHY(Point, 4326)").NotNullable();
         }
     }

@@ -7,9 +7,9 @@ namespace Cidax.Domain.Entities
     {
         public Guid Id { get; set; }
         public string Name { get; set; } = string.Empty;
-        public Category? Category { get; set; }
+        public Category Category { get; set; }
         public required Point Point { get; set; }
-        public static Location Create(string name, Category? category, double longitude, double latitude)
+        public static Location Create(string name, Category category, double longitude, double latitude)
         {
             return new Location
             {

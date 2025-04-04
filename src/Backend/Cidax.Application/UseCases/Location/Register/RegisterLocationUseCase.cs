@@ -34,7 +34,7 @@ namespace Cidax.Application.UseCases.Location.Register
 
             if (result.IsValid == false)
             {
-                var errorMessages = result.Errors.Select(e => e.ErrorMessage).ToList();
+                var errorMessages = result.Errors.Select(e => e.ErrorMessage).Distinct().ToList();
 
                 throw new ErrorOnValidationException(errorMessages);
             }
