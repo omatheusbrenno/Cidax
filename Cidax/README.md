@@ -9,4 +9,4 @@
 docker-compose up --build
 ```
 
-A API estará disponível em `http://localhost:5000/swagger`
+A API estará disponível em `http://localhost:5000/swagger` para o navegador ou Postman
